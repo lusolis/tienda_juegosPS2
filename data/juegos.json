@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "nombreJuego": "Grand Theft Auto: San Andreas",
+        "desc": "Juego de accion y aventura en un mundo abierto.",
+        "imagen": "../img/GTASanAndreas.jpg",
+        "categoria": "aventura",
+        "cantidad": 1,
+        "stock": 15,
+        "precio": 20.99
+    },
+    {
+        "id": 2,
+        "nombreJuego": "Final Fantasy X",
+        "desc": "Juego de rol con una historia epica y un sistema de combate por turnos.",
+        "imagen": "../img/FinalFantasyX.jpg",
+        "categoria": "aventura",
+        "cantidad": 1,
+        "stock": 8,
+        "precio": 25.50
+    },
+    {
+        "id": 3,
+        "nombreJuego": "Metal Gear Solid 3: Snake Eater",
+        "desc": "Juego de sigilo y accion ambientado en la Guerra Fria.",
+        "imagen": "../img/MetalGear3.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 10,
+        "precio": 22.00
+    },
+    {
+        "id": 4,
+        "nombreJuego": "Shadow of the Colossus",
+        "desc": "Juego de accion y aventura donde enfrentas gigantescos colosos.",
+        "imagen": "../img/ShadowOfTheColossus.jpg",
+        "categoria": "aventura",
+        "cantidad": 1,
+        "stock": 12,
+        "precio": 18.75
+    },
+    {
+        "id": 5,
+        "nombreJuego": "God of War II",
+        "desc": "Juego de accion y mitologia griega, protagonizado por Kratos.",
+        "imagen": "../img/GodOfWar2.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 20,
+        "precio": 19.99
+    },
+    {
+        "id": 6,
+        "nombreJuego": "Kingdom Hearts II",
+        "desc": "Juego de rol y accion que combina personajes de Disney con personajes de Final Fantasy.",
+        "imagen": "../img/KingdomHearts2.jpg",
+        "categoria": "rol",
+        "cantidad": 1,
+        "stock": 18,
+        "precio": 21.50
+    },
+    {
+        "id": 7,
+        "nombreJuego": "Devil May Cry 3: Dante's Awakening",
+        "desc": "Juego de accion y aventura donde controlas a Dante, un cazador de demonios.",
+        "imagen": "../img/DevilMayCry3.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 14,
+        "precio": 17.99
+    },
+    {
+        "id": 8,
+        "nombreJuego": "Gran Turismo 4",
+        "desc": "Simulador de carreras con una gran variedad de coches y circuitos.",
+        "imagen": "../img/GranTurismo4.jpg",
+        "categoria": "carreras",
+        "cantidad": 1,
+        "stock": 9,
+        "precio": 23.75
+    },
+    {
+        "id": 9,
+        "nombreJuego": "Shadow Hearts: Covenant",
+        "desc": "Juego de rol con elementos de horror y una historia rica en mitologia.",
+        "imagen": "../img/ShadowHeartsCovenant.jpg",
+        "categoria": "rol",
+        "cantidad": 1,
+        "stock": 7,
+        "precio": 29.99
+    },
+    {
+        "id": 10,
+        "nombreJuego": "Ratchet & Clank: Up Your Arsenal",
+        "desc": "Juego de plataformas y accion protagonizado por Ratchet y Clank.",
+        "imagen": "../img/Ratchet3.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 11,
+        "precio": 16.50
+    },
+    {
+        "id": 11,
+        "nombreJuego": "The Simpsons: Hit & Run",
+        "desc": "Juego de accion y aventura basado en la serie de television Los Simpsons, donde los jugadores exploran Springfield y resuelven misterios.",
+        "imagen": "../img/TheSimpsonsHitRun.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 10,
+        "precio": 18.99
+    },
+    {
+        "id": 12,
+        "nombreJuego": "Los Sims 2",
+        "desc": "Simulador de vida donde puedes crear y controlar personajes en su dia a dia.",
+        "imagen": "../img/LosSims2.jpg",
+        "categoria": "simulacion",
+        "cantidad": 1,
+        "stock": 16,
+        "precio": 12.50
+    },
+    {
+        "id": 13,
+        "nombreJuego": "Crash Bandicoot: Wrath of Cortex",
+        "desc": "Juego de plataformas donde controlas a Crash Bandicoot en su lucha contra el malvado Dr. Neo Cortex.",
+        "imagen": "../img/CrashBandicoot.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 13,
+        "precio": 15.99
+    },
+    {
+        "id": 14,
+        "nombreJuego": "Silent Hill 2",
+        "desc": "Juego de terror psicologico donde el protagonista, James Sunderland, explora el pueblo de Silent Hill en busca de respuestas sobre la muerte de su esposa.",
+        "imagen": "../img/SilentHill2.jpg",
+        "categoria": "terror",
+        "cantidad": 1,
+        "stock": 5,
+        "precio": 29.99
+    },
+    {
+        "id": 15,
+        "nombreJuego": "FIFA 07",
+        "desc": "Simulador de futbol con equipos y ligas internacionales, ofreciendo una experiencia realista de juego.",
+        "imagen": "../img/FIFA07.jpg",
+        "categoria": "deporte",
+        "cantidad": 1,
+        "stock": 8,
+        "precio": 10.00
+    },
+    {
+        "id": 16,
+        "nombreJuego": "SSX Tricky",
+        "desc": "Juego de deporte extremo de snowboard que ofrece trucos y competiciones en pistas desafiantes alrededor del mundo.",
+        "imagen": "../img/SSXTricky.jpg",
+        "categoria": "deporte",
+        "cantidad": 1,
+        "stock": 7,
+        "precio": 12.99
+    },
+    {
+        "id": 17,
+        "nombreJuego": "Resident Evil 4",
+        "desc": "Juego de terror y accion donde controlas a Leon Kennedy en su mision para rescatar a la hija del presidente de una misteriosa secta.",
+        "imagen": "../img/ResidentEvil4.jpg",
+        "categoria": "terror",
+        "cantidad": 1,
+        "stock": 6,
+        "precio": 24.99
+    },
+    {
+        "id": 18,
+        "nombreJuego": "Tony Hawk's Pro Skater 3",
+        "desc": "Juego de deporte extremo donde los jugadores realizan trucos en patineta en diferentes escenarios urbanos.",
+        "imagen": "../img/TonyHawk3.jpg",
+        "categoria": "deporte",
+        "cantidad": 1,
+        "stock": 4,
+        "precio": 15.50
+    },
+    {
+        "id": 19,
+        "nombreJuego": "Mortal Kombat",
+        "desc": "Juego de lucha donde los personajes se enfrentan en combates sangrientos.",
+        "imagen": "../img/MortalKombat.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 9,
+        "precio": 21.99
+    },
+    {
+        "id": 20,
+        "nombreJuego": "Kingdom Hearts",
+        "desc": "Juego que combina elementos de rol y accion con personajes de Disney y Final Fantasy en un universo original.",
+        "imagen": "../img/KingdomHearts.jpg",
+        "categoria": "rol",
+        "cantidad": 1,
+        "stock": 9,
+        "precio": 19.99
+    },
+    {
+        "id": 21,
+        "nombreJuego": "Hitman: Blood Money",
+        "desc": "Juego de sigilo y accion donde controlas a un asesino a sueldo.",
+        "imagen": "../img/Hitman.jpg",
+        "categoria": "accion",
+        "cantidad": 1,
+        "stock": 8,
+        "precio": 14.99
+    },
+    {
+        "id": 22,
+        "nombreJuego": "Bully",
+        "desc": "Juego de accion y aventura donde interpretas a un estudiante en una escuela privada, navegando por las dinámicas escolares y completando misiones.",
+        "imagen": "../img/Bully.jpg",
+        "categoria": "aventura",
+        "cantidad": 1,
+        "stock": 8,
+        "precio": 17.50
+    },
+    {
+        "id": 23,
+        "nombreJuego": "Need for Speed: Most Wanted",
+        "desc": "Juego de carreras y accion donde participas en carreras ilegales y evitas a la policia.",
+        "imagen": "../img/NeedForSpeedMostWanted.jpg",
+        "categoria": "carreras",
+        "cantidad": 1,
+        "stock": 10,
+        "precio": 18.50
+    },
+    {
+        "id": 24,
+        "nombreJuego": "Guitar Hero 2",
+        "desc": "Juego de musica y ritmo donde los jugadores usan un controlador de guitarra para seguir las canciones.",
+        "imagen": "../img/GuitarHero2.jpg",
+        "categoria": "musica",
+        "cantidad": 1,
+        "stock": 11,
+        "precio": 19.99
+    },
+    {
+        "id": 25,
+        "nombreJuego": "Madagascar: Escape 2 Africa",
+        "desc": "Juego de aventura basado en la película animada donde los jugadores exploran Madagascar y otras ubicaciones africanas.",
+        "imagen": "../img/Madagascar2.jpg",
+        "categoria": "aventura",
+        "cantidad": 1,
+        "stock": 11,
+        "precio": 16.99
+    },
+    {
+        "id": 26,
+        "nombreJuego": "Guitar Hero Metallica",
+        "desc": "Juego musical donde los jugadores tocan canciones de Metallica y otros artistas invitados.",
+        "imagen": "../img/GuitarHeroMetallica.jpg",
+        "categoria": "musical",
+        "cantidad": 1,
+        "stock": 9,
+        "precio": 21.99
+    },
+    {
+        "id": 27,
+        "nombreJuego": "Pro Evolution Soccer 2010",
+        "desc": "Simulador de futbol con equipos y ligas internacionales, ofreciendo una experiencia realista de juego.",
+        "imagen": "../img/PES2010.jpg",
+        "categoria": "deporte",
+        "cantidad": 1,
+        "stock": 7,
+        "precio": 18.50
+    },
+    {
+        "id": 28,
+        "nombreJuego": "Guitar Hero World Tour",
+        "desc": "Juego musical donde los jugadores forman una banda y tocan en diferentes ubicaciones y eventos.",
+        "imagen": "../img/GuitarHeroWorldTour.jpg",
+        "categoria": "musical",
+        "cantidad": 1,
+        "stock": 8,
+        "precio": 19.50
+    },
+    {
+        "id": 29,
+        "nombreJuego": "Pro Evolution Soccer 6",
+        "desc": "Simulador de futbol que ofrece una experiencia de juego realista y equipos internacionales.",
+        "imagen": "../img/PES6.jpg",
+        "categoria": "deporte",
+        "cantidad": 1,
+        "stock": 11,
+        "precio": 14.99
+    },
+    {
+        "id": 30,
+        "nombreJuego": "Jak and Daxter: The Precursor Legacy",
+        "desc": "Juego de plataformas y aventura donde el jugador controla a Jak y su compañero Daxter.",
+        "imagen": "../img/JakAndDaxter.jpg",
+        "categoria": "aventura",
+        "cantidad": 1,
+        "stock": 9,
+        "precio": 15.99
+    }
+]

@@ -1,0 +1,69 @@
+const modalContainer = document.getElementById("modal-container")
+
+fetch('juegos2.json')
+        .then(response => response.json())
+        .then(productos => {
+            const shopContent = document.getElementById('shopContent');
+            productos.forEach(product => {
+                let content = document.createElement("div");
+                content.className = "card";
+                content.innerHTML = `
+                    <img src="${product.imagen}" alt="${product.nombreJuego}">
+                    <h3>${product.nombreJuego}</h3>
+                    <p>${product.desc}</p>
+                    <p>Categoría: ${product.categoria}</p>
+                    <p class="price">Precio: USD <b>${product.precio}</b></p>
+                `;
+                
+                shopContent.append(content);
+
+                let comprar = document.createElement("button");
+                comprar.innerHTML = "Agregar al Carrito";
+                comprar.className = "Comprar";
+
+                content.append(comprar);
+            });
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error))
+
+const agregarAlCarrito = (id) => {
+fetch("/carrito/add", {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+})
+    .then((response) => response.json())
+    .then((data) => {
+    console.log(data.message);
+    })
+    .catch((error) => console.error("Error al agregar al carrito:", error));
+}
+
+//NUEVO
+const mostrarCarrito = () => {
+fetch("/carrito/all")
+    .then((response) => response.json())
+    .then((carrito) => {
+    const carritoContent = document.getElementById("carritoContent");
+    carritoContent.innerHTML = "";
+    carrito.forEach((product) => {
+        modalContainer.innerHTML = ""
+        modalContainer.style.display = "flex"
+        let content = document.createElement("div");
+        content.className = "modal-header";
+        content.innerHTML = `
+                <img src="${product.imagen}" alt="${product.nombreJuego}">
+                <h3>${product.nombreJuego}</h3>
+                <p>${product.desc}</p>
+                <p>Categoría: ${product.categoria}</p>
+                <p class="price">Precio: USD <b>${product.precio}</b></p>
+            `;
+        carritoContent.append(content);
+    });
+    })
+    .catch((error) => console.error("Error al obtener el carrito:", error));
+}
+
+verCarrito.addEventListener("click", mostrarCarrito)
