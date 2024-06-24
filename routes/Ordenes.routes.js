@@ -12,14 +12,23 @@ router.get('/verOrden', (req,res)=>{
 })
 
 router.post('/create',async(req,res)=>{
-    const {user, nombreJuego, categoria, cantidad, precio } = req.body
+    try {
+        const { user, productos, total } = req.body
+        
+        if (!user || !productos || !total) {
+            return res.status(400).json({ error: "Faltan datos obligatorios" })
+        }
 
-    try{
-        const result = await crearOrdenCompra({user, nombreJuego, categoria, cantidad, precio})
-        console.log(result)
-        res.status(200).json(result)    
-    }catch(error){
-        res.status(400).json()
+        const result = await crearOrdenCompra({ user, productos, total })
+
+        if (result) {
+            res.status(200).json(result)
+        } else {
+            res.status(400).json({ error: "Error al crear la orden de compra" })
+        }
+    } catch (error) {
+        console.error("Error al intentar crear la orden de compra:", error)
+        res.status(400).json({ error: "Error al intentar crear la orden de compra" })
     }
 })
 

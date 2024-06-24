@@ -8,19 +8,19 @@ export const getJuegos = async (categoria) => {
           headers: {
               'Content-Type': 'application/json'
           }
-      });
+      })
 
       // Verificar si la respuesta fue exitosa
       if (!res.ok) {
-          throw new Error(`Error: ${res.status} - ${res.statusText}`);
+          throw new Error(`Error: ${res.status} - ${res.statusText}`)
       }
 
       // Convertir la respuesta a JSON
-      const data = await res.json();
-      return data;
+      const data = await res.json()
+      return data
 
   } catch (error) {
-      console.error('Error al obtener los juegos:', error);
-      throw error; // Propaga el error para que pueda ser manejado externamente si es necesario
+      console.error('Error al obtener los juegos:', error)
+      throw error
   }
-};
+}

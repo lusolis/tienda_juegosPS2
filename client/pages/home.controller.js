@@ -1,4 +1,12 @@
+import { agregarAlCarrito, eliminarProducto } from "./carrito.js"
 const modalContainer = document.getElementById("modal-container")
+
+if(!sessionStorage.getItem('user')){
+
+    console.log('Usuario no encontrado')
+}
+
+const user = JSON.parse(sessionStorage.getItem('user'))
 
 fetch('juegos2.json')
         .then(response => response.json())
@@ -28,11 +36,12 @@ fetch('juegos2.json')
                 
             })
         })
+        
     })
         .catch(error => console.error('Error al cargar el archivo JSON:', error))
 
 
-const mostrarCarrito = () => {
+export const mostrarCarrito = () => {
     fetch("/carrito/all")
         .then((response) => response.json())
         .then((data) => {
@@ -83,44 +92,23 @@ const mostrarCarrito = () => {
 
             const total = carrito.reduce((acc, cur) => acc + cur.precio * cur.cantidad, 0);
 
-            const totalCompra = document.createElement("div");
+            const totalCompra = document.createElement("div")
             totalCompra.className = "total-content";
-            totalCompra.innerHTML = `Total a pagar: USD ${total}`;
+            totalCompra.innerHTML = `Total a pagar: USD ${total} <br><br>
+            <button id="finalizarCompra" class="finalizar-compra">FINALIZAR COMPRA</button>
+        `
             modalContainer.append(totalCompra)
-        })
-        .catch((error) => console.error("Error al obtener el carrito:", error));
-};
 
-const agregarAlCarrito = id => {
-    fetch("/carrito/agregar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id }),
-    })
-        .then(response => response.json())
-        .then(data => {
-            alert("Producto agregado al carrito")
+            const finalizarCompraBtn = document.getElementById("finalizarCompra");
+            finalizarCompraBtn.addEventListener("click", () => {
+            // Aquí puedes agregar la lógica para finalizar la compra
+            // Por ejemplo, podrías redirigir al usuario a la página de checkout o realizar otras acciones necesarias
+            alert("Compra finalizada. Implementa aquí tu lógica de checkout.");
         })
-        .catch(error => console.error("Error al agregar el producto:", error))
+        })
+        .catch((error) => console.error("Error al obtener el carrito:", error))
 }
 
-const eliminarProducto = (id) => {
-    fetch(`/carrito/eliminar`, {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id }),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Producto eliminado:", data)
-            mostrarCarrito() //actualiza el contenido de carrito
-        })
-        .catch((error) => console.error("Error al eliminar el producto:", error))
-}
 
 document.getElementById("verCarrito").addEventListener("click", mostrarCarrito)
 
