@@ -132,6 +132,7 @@ body {
   max-width: 300px;
   min-width: 280px;
   margin: 10px;
+  align-items: center;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -143,6 +144,9 @@ body {
   border-radius: 10px;
   width: 90%;
   height: 350px;
+}
+.card ul{
+  list-style-type: none;
 }
 .price {
   color: grey;
@@ -247,6 +251,7 @@ body {
   /* Adjusting categorias for smaller screens */
   #categorias {
     flex-direction: column;
+    height: auto;
     width: 90%;
   }
   #categorias p {

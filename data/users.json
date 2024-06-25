@@ -103,5 +103,20 @@
     "username": "agribaldo",
     "pass": "pass15",
     "id": 115
+  },
+  {
+    "nombre": "pepito",
+    "apellido": "perez",
+    "username": "pepiperez",
+    "pass": "passs16",
+    "id": 116
+  },
+  {
+    "nombre": "angel",
+    "apellido": "magaquian",
+    "username": "varguiMcLovin",
+    "pass": "1234",
+    "id": 117,
+    "status": true
   }
 ]

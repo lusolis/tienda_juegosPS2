@@ -47,8 +47,10 @@ router.post('/register', (req, res) => {
         apellido,
         username,
         pass,
-        id: nuevoId
+        id: nuevoId,
+        status:true
     }
+    console.log(nuevoUsuario)
     userData.push(nuevoUsuario)
     try{
         writeFile('./data/users.json', JSON.stringify(userData,null,2));
@@ -57,6 +59,5 @@ router.post('/register', (req, res) => {
         res.sendStatus(400)
     }
 })
-
 
 export default router

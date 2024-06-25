@@ -1,4 +1,4 @@
-import { agregarAlCarrito, eliminarProducto, finalizarCompra } from "./carrito.js"
+import { agregarAlCarrito, eliminarProducto, finalizarCompra, vaciarCarrito } from "./carrito.js"
 
 export const modalContainer = document.getElementById("modal-container")
 
@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 export const mostrarCarrito = () => {
+    
     fetch("/carrito/all")
         .then(response => response.json())
         .then(data => {
@@ -126,10 +127,12 @@ export const mostrarCarrito = () => {
         `;
             modalContainer.append(totalCompra)
 
-            const comprar = document.getElementById("finalizarCompraBtn")
+            const comprar = document.getElementById("finalizarCompraBtn");
             comprar.addEventListener("click", () => {
-                finalizarCompra(user.userName, carrito, total)
-                sessionStorage.removeItem("carrito")
+                finalizarCompra(user.userName, carrito, total);
+                vaciarCarrito(carrito);
+                sessionStorage.removeItem("carrito");
+                alert("Compra realizada con éxito");
                 mostrarCarrito()
             })
         })

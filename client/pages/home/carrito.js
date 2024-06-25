@@ -58,14 +58,24 @@ export const finalizarCompra = (user, productos, total) => {
         })
         .then((data) => {
             if (data.error) {
+                
                 console.error("Error al crear la orden de compra:", data.error)
                 mostrarCarrito()
+
             } else {
+               
                 console.log("Orden de compra creada:", data)
                 console.log(sessionStorage.getItem("carrito")) 
 
             }
         })
         .catch((error) => console.error("Error al crear la orden de compra:", error))
+}
+
+export const vaciarCarrito = (array) =>{
+                
+    array.splice(0, array.length)
+    //mostrarCarrito()
+
 }
 
