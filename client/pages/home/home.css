@@ -22,20 +22,35 @@ body {
     margin-top: 4vh;
     cursor: pointer;
   }
-  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
   .ver-carrito {
     font-size: 25px;
     margin-right: 20px;
     margin-top: 3.5vh;
     cursor: pointer;
   }
-  
+  .admin-button {
+    background-color:#1b1b1b;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 5px 10px; 
+    cursor: pointer;
+}
+
+.admin-button:hover, .total-content > button:hover {
+    background-color:darkblue; /* Cambio de color al pasar el mouse */
+}
   /*Banner styles*/
   .banner {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/ps2fondo.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/img/ps2fondo.jpg")
   }
   
   .banner-container {
@@ -58,6 +73,47 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
   
+  /*categoria*/
+  #categorias {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color:rgba(224, 221, 221, 0.2);
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 600px; 
+    height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#categorias p {
+  color: aliceblue;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#categorias button{
+  color:red;
+  font-weight: bold;
+}
+#categoriaSelect {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#categoriaSelect option {
+    padding: 5px;
+}
+
+#quitarFiltro{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
   /*product cards*/
   .shop-content {
     display: flex;
@@ -107,6 +163,12 @@ body {
     font-size: 18px;
     margin-top: auto; /* Nuevo */
 }
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
 .finalizar-compra{
   border: none;
   border-radius: 10px;
@@ -183,7 +245,6 @@ body {
     padding-top: 20px;
   }
   
-  /*se agregaron unas lineas de css con media querys para que se adapte mejor al responsive :)*/
   
   @media only screen and (max-width: 750px) {
     .modal-container {

@@ -1,35 +1,30 @@
 import { Router } from "express"
-import { crearOrdenCompra } from "../db/model/ordenCompra.model.js"
-
+import { crearOrdenCompra, findAll } from "../db/model/ordenCompra.model.js"
 const router = Router()
 
-router.get('/verOrden', (req,res)=>{
-    try{
-        res.status(200).json()
-    }catch(error){
-        res.status(400).json()
-    }
-})
-
-router.post('/create',async(req,res)=>{
+router.get('/verOrdenes', async (req,res) => {
     try {
-        const { user, productos, total } = req.body
-        
-        if (!user || !productos || !total) {
-            return res.status(400).json({ error: "Faltan datos obligatorios" })
-        }
-
-        const result = await crearOrdenCompra({ user, productos, total })
-
-        if (result) {
-            res.status(200).json(result)
-        } else {
-            res.status(400).json({ error: "Error al crear la orden de compra" })
-        }
+        const ordenes = await findAll()
+        res.status(200).json(ordenes)
     } catch (error) {
-        console.error("Error al intentar crear la orden de compra:", error)
-        res.status(400).json({ error: "Error al intentar crear la orden de compra" })
+        console.error("Error al obtener las órdenes de compra:", error)
+        res.status(500).json({ error: "Error interno del servidor" })
     }
 })
+
+router.post('/crearOrden', async (req, res) => {
+    try {
+        const { user, productos, total } = req.body;
+
+        const orden = await crearOrdenCompra({ user, productos, total });
+        await orden.save();
+
+        res.status(200).json(orden); // Enviar la orden creada en caso de éxito
+    } catch (error) {
+        console.error('Error al intentar crear la orden de compra:', error);
+        res.status(500).json({ error: 'Error al intentar crear la orden de compra' });
+    }
+})
+
 
 export default router

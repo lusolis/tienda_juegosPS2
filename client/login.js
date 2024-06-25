@@ -9,7 +9,6 @@ formLogIn.addEventListener('submit', (e)=>{
 })
 
 const logIn = async()=>{
-    /*Inputs del usuario */
     const userName = document.getElementById("user").value
     const pass = document.getElementById("pass").value
 
@@ -26,7 +25,7 @@ const logIn = async()=>{
     if(data.status){
         console.log(data)
         sessionStorage.setItem('user', JSON.stringify(data))
-        window.location.href = "./pages/home.html"
+        window.location.href = "./pages/home/home.html"
     }else{
         error.textContent = "Error al encontrar al usuario 🫠"
     }
