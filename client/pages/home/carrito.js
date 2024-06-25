@@ -1,6 +1,7 @@
 import { mostrarCarrito } from "./home.controller.js"
 import { modalContainer } from "./home.controller.js"
 
+
 export const agregarAlCarrito = (id) => {
     fetch("/carrito/agregar", {
         method: "POST",
@@ -12,8 +13,6 @@ export const agregarAlCarrito = (id) => {
         .then(response => response.json())
         .then(data => {
             alert("Producto agregado al carrito")
-
-            // Obtener el carrito actual de sessionStorage o inicializar un array vacío
             let carrito = JSON.parse(sessionStorage.getItem("carrito")) || []
             const found = carrito.find(product => product.id === id)
 
@@ -22,7 +21,6 @@ export const agregarAlCarrito = (id) => {
             } else {
                 carrito.push({ id, cantidad: 1 })
             }
-            //mostrarCarrito();
         })
         .catch(error => console.error("Error al agregar el producto:", error))
 }

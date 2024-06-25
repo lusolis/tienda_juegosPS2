@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { readFile } from 'fs/promises' 
+import { readFile, writeFile } from 'fs/promises' 
 
 const router = Router()
 const fileUsers = await readFile('./data/users.json', 'utf-8')
@@ -24,5 +24,39 @@ router.post('/login', (req, res)=>{
         res.status(400).json({status:false})
     }
 })
+
+router.post('/register', (req, res) => {
+    
+    const nombre = req.body.nombre
+    const apellido = req.body.apellido
+    const username = req.body.username
+    const pass = req.body.pass
+
+    if (!nombre || !apellido || !username || !pass) {
+        return res.status(400).json({ error: 'Todos los campos son requeridos' })
+    }
+
+    const existingUser = userData.find(user => user.username.toLowerCase() === username.toLowerCase())
+    if (existingUser) {
+        return res.status(400).json({ error: 'El usuario ya está registrado' })
+    }
+
+    const nuevoId = userData[userData.length -1].id + 1
+    const nuevoUsuario = {        
+        nombre,
+        apellido,
+        username,
+        pass,
+        id: nuevoId
+    }
+    userData.push(nuevoUsuario)
+    try{
+        writeFile('./data/users.json', JSON.stringify(userData,null,2));
+        res.status(200).json(nuevoUsuario)
+    }catch(error){
+        res.sendStatus(400)
+    }
+})
+
 
 export default router

@@ -1,3 +1,6 @@
+
+//esto esta al re pedo
+
 import { API } from "../api.js"
 const error = document.getElementById("error")
 

@@ -2,6 +2,12 @@ import { agregarAlCarrito, eliminarProducto, finalizarCompra } from "./carrito.j
 
 export const modalContainer = document.getElementById("modal-container")
 
+if (!sessionStorage.getItem('user')) {
+    console.log('Usuario no encontrado')
+}
+
+const user = JSON.parse(sessionStorage.getItem('user'))
+
 document.addEventListener("DOMContentLoaded", () => {
     const cambiarVistaBtn = document.getElementById("verOrdenesBtn")
     const verCarritoBtn = document.getElementById("verCarrito")
@@ -11,12 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cambiarVistaBtn.addEventListener("click", () => {
         window.location.href = "../admin/admin.html"
     })
-
-    if (!sessionStorage.getItem('user')) {
-        console.log('Usuario no encontrado')
-    }
-
-    const user = JSON.parse(sessionStorage.getItem('user'))
 
     const fetchProductos = (url) => {
         fetch(url)
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             })
             .catch(error => console.error('Error al cargar los productos:', error))
-    };
+    }
 
     // Inicialmente carga todos los productos
     fetchProductos('/juegos/all')
@@ -134,4 +134,4 @@ export const mostrarCarrito = () => {
             })
         })
         .catch(error => console.error("Error al obtener el carrito:", error))
-};
+}

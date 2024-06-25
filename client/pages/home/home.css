@@ -1,175 +1,166 @@
-body {
-    margin: 0px;
-    background-color: #020514;
-  }
-  /*navbar*/
-  .nav-container {
-    position: sticky;
-    z-index: 3;
-    top: 0;
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    height: 12vh;
-    background-color: #1b1b1b;
-  }
-  
-  .navbar-logo {
-    justify-self: start;
-    margin-left: 20px;
-    color: #fff;
-    margin-top: 4vh;
-    cursor: pointer;
-  }
-  .nav-right {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
+/* General styles */
+* {
+  font-family: "Poppins", sans-serif;
 }
-  .ver-carrito {
-    font-size: 25px;
-    margin-right: 20px;
-    margin-top: 3.5vh;
-    cursor: pointer;
-  }
-  .admin-button {
-    background-color:#1b1b1b;
-    border-radius: 10px;
-    color: white;
-    border: none;
-    padding: 5px 10px; 
-    cursor: pointer;
+body {
+  margin: 0px;
+  background-color: #020514;
 }
 
-.admin-button:hover, .total-content > button:hover {
-    background-color:darkblue; /* Cambio de color al pasar el mouse */
+/* Navbar styles */
+.nav-container {
+  position: sticky;
+  z-index: 3;
+  top: 0;
 }
-  /*Banner styles*/
-  .banner {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/img/ps2fondo.jpg")
-  }
-  
-  .banner-container {
-    text-align: center;
-    padding: 15% 0;
-  }
-  
-  .banner h1 {
-    margin: 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-size: 62px;
-    font-weight: bold;
-  }
-  
-  .banner p {
-    font-size: 30px;
-    color: white;
-    opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  /*categoria*/
-  #categorias {
-    display: flex; 
-    align-items: center; 
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color:rgba(224, 221, 221, 0.2);
-    border-radius: 5px;
-    margin-left: 20px;
-    width: 600px; 
-    height: 35px;
-    margin-left: auto;
-    margin-right: auto;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 12vh;
+  background-color: #1b1b1b;
+}
+.navbar-logo {
+  justify-self: start;
+  margin-left: 20px;
+  color: #fff;
+  margin-top: 4vh;
+  cursor: pointer;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.ver-carrito {
+  font-size: 25px;
+  margin-right: 20px;
+  margin-top: 3.5vh;
+  cursor: pointer;
+}
+.admin-button {
+  background-color: #1b1b1b;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  padding: 5px 10px; 
+  cursor: pointer;
+}
+.admin-button:hover,
+.total-content > button:hover {
+  background-color: darkblue;
+}
+
+/* Banner styles */
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-image: url("/img/ps2fondo.jpg");
+}
+.banner-container {
+  text-align: center;
+  padding: 15% 0;
+}
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 62px;
+  font-weight: bold;
+}
+.banner p {
+  font-size: 30px;
+  color: white;
+  opacity: 0.7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Categoria styles */
+#categorias {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1px solid aliceblue;
+  height: 40px;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto; 
 }
 
 #categorias p {
   color: aliceblue;
-    font-size: 16px;
-    margin-bottom: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
-#categorias button{
-  color:red;
+#categorias button {
+  color: red;
   font-weight: bold;
+  padding-left: 15px;
 }
 #categoriaSelect {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
 }
 #categoriaSelect option {
-    padding: 5px;
+  padding: 5px;
 }
 
-#quitarFiltro{
+#quitarFiltro {
   background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 20px;
 }
-  /*product cards*/
-  .shop-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    margin-left: 60px;
-    margin-right: 60px;
-  }
-  .card {
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(224, 221, 221, 0.2);
-    border-radius: 10px;
-    max-width: 300px;
-    min-width: 280px;
-    margin: 10px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    display: flex; /* Nuevo */
-    flex-direction: column; /* Nuevo */
-    justify-content: space-between; /* Nuevo */
-    padding: 20px; /* Nuevo */
-}
 
-  
-  .card > img {
-    padding-top: 15px;    
-    border-radius: 10px;
-    width: 90%;
-    height: 350px;
-  }
-  
-  .price {
-    color: grey;
-    font-size: 22px;
-  }
-  
-  .card button {
-    border: none;
-    border-radius: 10px;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: auto; /* Nuevo */
+/* Product cards */
+.shop-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px 60px;
 }
-
-ul{
-  list-style-type: none;
-  padding: 0;
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(224, 221, 221, 0.2);
+  border-radius: 10px;
+  max-width: 300px;
+  min-width: 280px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
 }
-
-.finalizar-compra{
+.card > img {
+  padding-top: 15px;    
+  border-radius: 10px;
+  width: 90%;
+  height: 350px;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.card button {
+  border: none;
+  border-radius: 10px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: auto;
+}
+.finalizar-compra {
   border: none;
   border-radius: 10px;
   outline: 0;
@@ -180,113 +171,93 @@ ul{
   font-weight: bold;
   cursor: pointer;
   font-size: 18px;
-  margin-top: auto; /* Nuevo */
+  margin-top: auto;
 }
-  
-  .card button:hover {
-    opacity: 0.7;
-  }
-  
-  /*modal content*/
+.card button:hover {
+  opacity: 0.7;
+}
+
+/* Modal content */
+.modal-container {
+  width: 80%;
+  margin: 0 10%;
+  max-height: 88vh;
+  color: #fff;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  scrollbar-color: none;
+}
+.modal-container::-webkit-scrollbar {
+  display: none;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0a0909;
+  color: #fff;
+  width: 100%;
+}
+.modal-header-title {
+  justify-self: start;
+}
+.modal-header-button {
+  cursor: pointer;
+}
+.modal-container > .modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
+}
+.modal-container > div > img {
+  height: 120px;
+  width: 120px;
+}
+.total-content {
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 750px) {
   .modal-container {
-    width: 80%;
-    margin: 0 10%;
-    max-height: 88vh;
-    color: #fff;
-    background-color: #121212;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*for the top*/
-    position: fixed;
-    overflow: auto;
-    z-index: 9;
-    top: 12vh;
-    scrollbar-color: none;
-  }
-  
-  .modal-container::-webkit-scrollbar {
-    display: none;
-  }
-  .modal-header {
-    display: flex;
-    justify-content: space-around;
-    background-color: #0a0909;
-    color: #fff;
     width: 100%;
+    margin: 0;
+    min-height: 88vh;
   }
-  
-  .modal-header-title {
-    justify-self: start;
-  }
-  
-  .modal-header-button {
-    cursor: pointer;
-  }
-  
   .modal-container > .modal-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 70%;
-    margin: 10px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2px;
   }
-  
   .modal-container > div > img {
-    height: 120px;
-    width: 120px;
+    height: 80px;
+    width: 80px;
   }
-  
-  .total-content {
-    font-size: 25px;
-    padding: 20px;
-    text-align: center;
-    padding-top: 20px;
+
+  /* Adjusting categorias for smaller screens */
+  #categorias {
+    flex-direction: column;
+    width: 90%;
   }
-  
-  
-  @media only screen and (max-width: 750px) {
-    .modal-container {
-      width: 100%;
-      margin: 0;
-      min-height: 88vh;
-    }
-  
-    .modal-container > .modal-content {
-      justify-content: space-between;
-      width: 100%;
-      margin: 2px;
-    }
-  
-    .modal-container > div > img {
-      height: 80px;
-      width: 80px;
-    }
+  #categorias p {
+    margin-bottom: 5px;
   }
-  
-  /*delete button product*/
-  .delete-product {
-    cursor: pointer;
+  #categorias button {
+    padding-left: 0;
   }
-  
-  /*CarritoCounter*/
-  .cantidad-carrito {
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    font-size: 12px;
-    padding: 4px;
-    top: 37px;
-    right: 14px;
-    position: absolute;
-    display: none;
-  }
-  
-  .sumar {
-    cursor: pointer;
-  }
-  
-  .restar {
-    cursor: pointer;
-  }
+}
+
+/* Delete button product */
+.delete-product {
+  cursor: pointer;
+}
