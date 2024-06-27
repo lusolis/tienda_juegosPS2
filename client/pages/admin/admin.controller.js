@@ -1,10 +1,11 @@
+import { API } from "/api.js"
 const cambiarVistaBtn = document.getElementById("cambiarVistaBtn").addEventListener("click", () => {
     window.location.href = "/index.html"
 })
 
 const content = document.getElementById('Content')
 
-fetch("/ordenes/verOrdenes")
+fetch(`${API}/ordenes/verOrdenes`)
     .then(response => {
         if (!response.ok) {
             throw new Error("Error en la solicitud")
@@ -35,7 +36,7 @@ fetch("/ordenes/verOrdenes")
                         </li>
                     `).join('')}
                 </ul>
-                <p><b>Total: USD ${orden.total}</p>
+                <p><b>Total: USD ${orden.total}</p>               
             `
             content.appendChild(ordenElement)
         })

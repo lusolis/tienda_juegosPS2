@@ -29,8 +29,11 @@ const logIn = async()=>{
         console.log(data)
         sessionStorage.setItem('user', JSON.stringify(data))
         window.location.href = "./pages/home/home.html"
+    }else if (data.admin){
+        console.log("hola admin")
+       window.location.href = "./pages/admin/admin.html"
     }else{
-        error.textContent = "Error al encontrar al usuario"
+         error.textContent = "Error al encontrar al usuario"
     }
 }
 

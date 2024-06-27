@@ -1,4 +1,4 @@
-/* General styles */
+/* General */
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -7,7 +7,7 @@ body {
   background-color: #020514;
 }
 
-/* Navbar styles */
+/* Navbar */
 .nav-container {
   position: sticky;
   z-index: 3;
@@ -37,7 +37,7 @@ body {
   margin-top: 3.5vh;
   cursor: pointer;
 }
-.admin-button {
+.cerrarSesion {
   background-color: #1b1b1b;
   border-radius: 10px;
   color: white;
@@ -45,12 +45,11 @@ body {
   padding: 5px 10px; 
   cursor: pointer;
 }
-.admin-button:hover,
-.total-content > button:hover {
+.cerrarSesion:hover, .finalizar-compra:hover{
   background-color: darkblue;
 }
 
-/* Banner styles */
+/* Banner */
 .banner {
   background-size: cover;
   background-position: center;
@@ -75,7 +74,7 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Categoria styles */
+/* Categoria */
 #categorias {
   display: flex;
   align-items: center;
@@ -101,7 +100,7 @@ body {
   padding-left: 15px;
 }
 #categoriaSelect {
-  width: 100%;
+  width: 80%;
   padding: 8px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -164,30 +163,19 @@ body {
   font-size: 18px;
   margin-top: auto;
 }
-.finalizar-compra {
-  border: none;
-  border-radius: 10px;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #02832d;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 18px;
-  margin-top: auto;
-}
+
 .card button:hover {
   opacity: 0.7;
 }
 
-/* Modal content */
+/* Carrito */
 .modal-container {
   width: 80%;
   margin: 0 10%;
   max-height: 88vh;
   color: #fff;
-  background-color: #121212;
+  background-color:#1b1b1b;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,6 +201,9 @@ body {
 .modal-header-button {
   cursor: pointer;
 }
+.modal-header-button:hover {
+  color: red;
+}
 .modal-container > .modal-content {
   display: flex;
   flex-direction: row;
@@ -229,6 +220,35 @@ body {
   font-size: 25px;
   padding: 20px;
   text-align: center;
+}
+.finalizar-compra {
+  border: none;
+  border-radius: 10px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #02832d;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: auto;
+}
+.seguirComprando {
+  border: none;
+  border-radius: 10px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: auto;
+}
+.seguirComprando:hover {
+  color: green;
 }
 
 /* Media queries for responsiveness */
@@ -248,7 +268,6 @@ body {
     width: 80px;
   }
 
-  /* Adjusting categorias for smaller screens */
   #categorias {
     flex-direction: column;
     height: auto;
@@ -262,7 +281,6 @@ body {
   }
 }
 
-/* Delete button product */
 .delete-product {
   cursor: pointer;
 }

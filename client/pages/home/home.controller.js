@@ -1,4 +1,4 @@
-import { agregarAlCarrito, eliminarProducto, finalizarCompra, vaciarCarrito } from "./carrito.js"
+import { agregarAlCarrito, eliminarProducto, finalizarCompra } from "./carrito.js"
 
 export const modalContainer = document.getElementById("modal-container")
 
@@ -9,13 +9,13 @@ if (!sessionStorage.getItem('user')) {
 const user = JSON.parse(sessionStorage.getItem('user'))
 
 document.addEventListener("DOMContentLoaded", () => {
-    const cambiarVistaBtn = document.getElementById("verOrdenesBtn")
+    const cerrar = document.getElementById("cerrar")
     const verCarritoBtn = document.getElementById("verCarrito")
     const categoriaSelect = document.getElementById("categoriaSelect")
     const eliminarFiltros = document.getElementById("quitarFiltro")
 
-    cambiarVistaBtn.addEventListener("click", () => {
-        window.location.href = "../admin/admin.html"
+    cerrar.addEventListener("click", () => {
+        window.location.href = "/index.html"
     })
 
     const fetchProductos = (url) => {
@@ -48,10 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error('Error al cargar los productos:', error))
     }
 
-    // Inicialmente carga todos los productos
     fetchProductos('/juegos/all')
 
-    // Filtrar productos por categoría
     categoriaSelect.addEventListener("change", (event) => {
         const categoria = event.target.value
         if (categoria) {
@@ -82,7 +80,7 @@ export const mostrarCarrito = () => {
             const modalHeader = document.createElement("div")
             modalHeader.className = "modal-header"
             modalHeader.innerHTML = `
-                <h1 class="modal-header-title">Carrito.</h1>
+                <h1 class="modal-header-title">Carrito</h1>
             `;
             modalContainer.append(modalHeader)
 
@@ -122,19 +120,28 @@ export const mostrarCarrito = () => {
 
             const totalCompra = document.createElement("div")
             totalCompra.className = "total-content"
-            totalCompra.innerHTML = `Total a pagar: USD ${total} <br><br>
-            <button id="finalizarCompraBtn" class="finalizar-compra">FINALIZAR COMPRA</button>
+            totalCompra.innerHTML = `Total a pagar: USD ${parseFloat(total.toFixed(2))} <br><br>
+            <button id="finalizarCompraBtn" class="finalizar-compra">FINALIZAR COMPRA</button><br>
+            <button id="seguirComprandoBtn" class="seguirComprando">Seguir Comprando</button>
         `;
             modalContainer.append(totalCompra)
 
-            const comprar = document.getElementById("finalizarCompraBtn");
+            const comprar = document.getElementById("finalizarCompraBtn")
             comprar.addEventListener("click", () => {
-                finalizarCompra(user.userName, carrito, total);
-                vaciarCarrito(carrito);
-                sessionStorage.removeItem("carrito");
-                alert("Compra realizada con éxito");
+                finalizarCompra(user.userName, carrito, total)
+                
+                sessionStorage.removeItem("carrito")
+                alert("Compra realizada con éxito")
+                carrito.forEach(element => {
+                    eliminarProducto(element.id)
+                })
                 mostrarCarrito()
             })
+            const seguir = document.getElementById("seguirComprandoBtn")
+            seguir.addEventListener("click", () => {
+                modalContainer.style.display = "none"
+            })
+
         })
         .catch(error => console.error("Error al obtener el carrito:", error))
 }

@@ -18,8 +18,8 @@ export const findAll = async () =>{
         await connectToDataBase()
         const res = await Orden.find()
         return res
-        //return JSON.parse(JSON.stringify(res))
     } catch (error) {
-        
+        console.log(error)
+        return false
     }
 }

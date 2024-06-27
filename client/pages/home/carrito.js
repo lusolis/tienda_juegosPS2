@@ -72,10 +72,3 @@ export const finalizarCompra = (user, productos, total) => {
         .catch((error) => console.error("Error al crear la orden de compra:", error))
 }
 
-export const vaciarCarrito = (array) =>{
-                
-    array.splice(0, array.length)
-    //mostrarCarrito()
-
-}
-

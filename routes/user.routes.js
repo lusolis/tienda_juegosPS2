@@ -5,12 +5,23 @@ const router = Router()
 const fileUsers = await readFile('./data/users.json', 'utf-8')
 const userData = JSON.parse(fileUsers)
 
+const userAdmin = "admin"
+const passAdmin = "passadmin"
+
 router.post('/login', (req, res)=>{
     const userName = req.body.userName
     const pass = req.body.pass
 
     const result = userData.find(e => e.username === userName && e.pass === pass)
-    
+
+
+    if(userName == userAdmin && pass == passAdmin){
+        const dataAdmin = {
+            admin: true
+        }
+        res.status(200).json(dataAdmin)       
+    }
+
     if(result){
         const data = {
             name: result.name,
@@ -18,8 +29,7 @@ router.post('/login', (req, res)=>{
             userName: result.username,
             status: true
         }
-        console.log(data)
-        res.status(200).json(data)
+        res.status(200).json(data)  
     }else{
         res.status(400).json({status:false})
     }
